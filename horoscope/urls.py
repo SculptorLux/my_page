@@ -3,6 +3,5 @@ from . import views
 # Дополнительный конфиг url для расширения
 
 urlpatterns = [
-    path('leo/', views.leo),
-    path('scorpio/', views.scorpio),
+    path('<sign_zodiac>', views.get_info_about_sign_zodiac),
 ]
