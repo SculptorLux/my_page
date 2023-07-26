@@ -18,7 +18,21 @@ zodiac_dict = {
     'pisces': 'Рыбы - двенадцатый знак зодиака, планеты Юпитер (с 20 февраля по 20 марта).',
 }
 
-
+def index(request):
+    zodiacs = list(zodiac_dict)
+    li_elem = ''
+    for sign in zodiacs:
+        redirect_path = reverse("horoscope-name", args=[sign])
+        li_elem += f"<li> <a href ='{redirect_path}'>{sign.title()}</a></li>"
+    response = f"""
+    <ol>
+        {li_elem}
+    </ol>
+    """
+    return HttpResponse(response)
+    
+    
+    
 def get_info_about_sign_zodiac(request, sign_zodiac):
     descriprtion = zodiac_dict.get(sign_zodiac, None)
     if descriprtion:
