@@ -6,6 +6,11 @@
 </head>
 <body>
     <h1>Приложение Гороскоп</h1>
-    <h2>{{ discript|title }}</h2>
+
+    {% if  discript is None %}
+        <h2>Неправильный знак зодиака</h2>
+    {% else %}
+        <h2>{{ discript|title }}</h2>
+    {% endif %}
 </body>
 </html>
