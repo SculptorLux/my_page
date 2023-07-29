@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Меню</title>
+</head>
+<body>
+    {% for zodiac in zodiacs %}
+        <li>{{ forloop.counter}} {{zodiac|title }}</li>
+    {% endfor %}
+</body>
+</html>
